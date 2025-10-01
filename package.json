@@ -1,0 +1,16 @@
+{
+	"name": "quickcv-monorepo",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"build": "pnpm -r build",
+		"dev:templates": "pnpm --filter templates dev",
+		"dev:app": "pnpm --filter app dev"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@biomejs/biome": "2.0.0"
+	}
+}

@@ -1,0 +1,19 @@
+---
+import DmrkLogo from "../assets/dmrk.svg";
+import GithubLogo from "../assets/github.svg";
+---
+
+<div class="flex items-center gap-4 w-auto justify-center mx-auto [&>div]:h-10 relative pb-8">
+  <div class="bg-white/90 rounded-full px-4 py-2 shadow-card hover:scale-105 transition duration-300">
+    <span class="text-sm font-medium text-gradient"> Built by dmrk.dev </span>
+  </div>
+  <div class="bg-white/90 rounded-full h-full shadow-card flex items-center [&>a]:text-black/50 [&>a]:hover:text-black [&>a]:transition-colors [&>a]:duration-200 hover:scale-105 transition duration-300">
+    <a href="https://dmrk.dev" target="_blank" class="px-4 h-full inline-flex items-center">
+      <DmrkLogo class="h-4" />
+    </a>
+    <span class="w-px h-2 bg-black/30"></span>
+    <a href="https://github.com/dmrkdev/quickcv" target="_blank" class="px-4 h-full inline-flex items-center">
+      <GithubLogo class="h-4" />
+    </a>
+  </div>
+</div>

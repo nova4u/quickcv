@@ -1,0 +1,71 @@
+---
+import Arrow1 from "../assets/arrows/1.svg";
+import Arrow2 from "../assets/arrows/2.svg";
+import Step1 from "../assets/steps/step01.webp";
+import Step2 from "../assets/steps/step02.webp";
+import Step3 from "../assets/steps/step03.webp";
+import Link from "../components/Link.astro";
+
+const steps = [
+  {
+    number: 1,
+    title: "Add your details.",
+    description: "Fill in your personal info, work experience, education, and socials using the guided form.",
+    bgColor: "#E8F1FC",
+    imagePosition: { top: -40, left: 8 },
+    imageDimensions: { width: 345.34, height: 215 },
+    image: Step1,
+  },
+  {
+    number: 2,
+    title: "Enter your Vercel API key.",
+    description: "Securely connect your Vercel account to enable one-click deployment. Your key stays in your browser.",
+    bgColor: "#E8F1FC",
+    imagePosition: { top: -6.21, left: 0 },
+    imageDimensions: { width: 312.6, height: 187.9 },
+    image: Step2,
+  },
+  {
+    number: 3,
+    title: "Deploy online",
+    description: "Publish your CV as a live website with built-in analytics support and download a polished PDF anytime",
+    bgColor: "#E3EEFA",
+    imagePosition: { top: 18.06, left: 17.61 },
+    imageDimensions: { width: 289.08, height: 138.87 },
+    image: Step3,
+  },
+];
+---
+
+<section class="bg-gradient-to-b from-white/0 via-white to-white via-10% -mt-40 relative pt-50 px-4/mr-20 px-4 pb-20">
+  <div class="max-w-[1400px] mx-auto mt-14">
+    <div class="space-y-4 md:text-center max-w-lg mx-auto">
+      <h2 class="text-4xl lg:text-5xl tracking-tight font-medium leading-tighter">All it takes is <span>3</span> simple steps.</h2>
+      <p class="text-base text-gray-600">Go from blank form to live portfolio in minutes — no accounts, no setup, just your CV.</p>
+      <Link href="https://app.getquickcv.com" target="_blank" type="primary" className="w-full md:w-auto relative z-10">Create CV</Link>
+    </div>
+    <!-- Steps Container -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-14 w-full mt-4 md:mt-16">
+      {
+        steps.map((step, index) => (
+          <div class="flex flex-col gap-[10px] w-full md:max-w-sm relative">
+            {index === 0 && <Arrow1 class={"absolute top-0 right-0 -translate-y-1/4 md:block hidden"} />}
+            {index === 1 && <Arrow2 class={"absolute top-[105%] right-0 translate-x-1/2 md:block hidden"} />}
+            <div class="text-[52px] font-extrabold leading-[1.4] text-black/10 [filter:url(#inset-shadow)]" style="text-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);">
+              {step.number}
+            </div>
+            <div class="flex flex-col gap-[18px] w-full">
+              <div class="flex flex-col gap-[10px] w-full">
+                <h3 class="text-[16px] font-medium leading-[1.4] text-black">{step.title}</h3>
+                <p class="text-[16px] font-normal leading-[1.4] text-black md:h-17">{step.description}</p>
+              </div>
+              <div class="w-full mt-2 md:mt-6 rounded-xl relative overflow-hidden shadow-card" style={`background-color: ${step.bgColor}`}>
+                <img src={step.image.src} alt={`Step ${step.number}: ${step.title}`} class="object-cover w-full h-full" />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

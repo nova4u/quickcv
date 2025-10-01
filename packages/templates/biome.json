@@ -1,0 +1,46 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+	"root": false,
+	"extends": "//",
+	"overrides": [
+		{
+			"includes": ["src/templates/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noRestrictedImports": {
+							"level": "error",
+							"options": {
+								"paths": {
+									"react": {
+										"importNames": [
+											"useState",
+											"useEffect",
+											"useCallback",
+											"useMemo",
+											"useRef",
+											"useContext",
+											"useReducer",
+											"useLayoutEffect",
+											"useImperativeHandle",
+											"useDebugValue",
+											"useDeferredValue",
+											"useId",
+											"useInsertionEffect",
+											"useSyncExternalStore",
+											"useTransition",
+											"startTransition"
+										]
+									}
+								}
+							}
+						}
+					},
+					"correctness": {
+						"noUndeclaredVariables": "error"
+					}
+				}
+			}
+		}
+	]
+}

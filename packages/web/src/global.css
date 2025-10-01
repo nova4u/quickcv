@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Rethink Sans", sans-serif;
+	--breakpoint-3xl: 87.5rem;
+	--shadow-container:
+		0px 0px 0px 1px rgba(0, 0, 0, 0.07),
+		0px 8px 16px -8px rgba(0, 0, 0, 0.16),
+		0px 2px 56px 0px rgba(0, 0, 0, 0.1),
+		0px 16px 32px -16px rgba(0, 0, 0, 0.16);
+	--shadow-card:
+		0px 2px 56px rgba(0, 0, 0, 0.1),
+		0px 0px 0px 1px rgba(0, 0, 0, 0.07),
+		0px 8px 16px -8px rgba(0, 0, 0, 0.16),
+		0px 16px 32px -16px rgba(0, 0, 0, 0.16);
+}
+
+@layer components {
+	.ds-logo {
+		filter: drop-shadow(112px 112px 62px rgba(2, 16, 49, 0.05)) drop-shadow(62px 62px 56px rgba(2, 16, 49, 0.08))
+			drop-shadow(31px 31px 37px rgba(2, 16, 49, 0.14)) drop-shadow(6px 6px 25px rgba(2, 16, 49, 0.2));
+	}
+	.text-gradient {
+		background-image: linear-gradient(90deg, #000000 0%, #808080 25%, #000000 50%, #808080 75%, #000000 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	/* .premium-shadow {
+    box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.07),
+    0px 8px 16px -8px rgba(0, 0, 0, 0.16),
+    0px 2.71px 56.95px 0px rgba(0, 0, 0, 0.1),
+    0px 16px 32px -16px rgba(0, 0, 0, 0.16);
+  } */
+}

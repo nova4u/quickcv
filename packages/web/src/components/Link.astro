@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = {
+  type: "primary";
+  className?: string;
+} & HTMLAttributes<"a">;
+
+const { type, className, ...rest } = Astro.props;
+---
+
+<a
+  class:list={[
+    "inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium transition-all tracking-[-0.025em] disabled:pointer-events-none disabled:opacity-80 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+    "h-10 md:h-9 px-8 py-2 has-[>svg]:px-3",
+    "bg-black/80 text-white hover:bg-black/90",
+    "shadow-[inset_0_-12px_16px_0_hsla(0,0%,100%,.10),inset_0_4px_16px_0_hsla(0,0%,100%,.16),inset_0_.75px_.25px_0_hsla(0,0%,100%,.12),inset_0_.25px_.25px_0_hsla(0,0%,100%,.32),0_3px_6px_0_rgba(0,0,0,.19),0_0_0_.75px_rgba(0,0,0,.56),var(--shadow)] [--shadow-color:rgb(0,0,0)]",
+    "focus-visible:ring-1 focus-visible:ring-offset-2 focus-visible:ring-black/80 focus-visible:ring-offset-white ",
+    "[--shadow:0_2px_4px_0_color-mix(in_hsl,_var(--shadow-color),_transparent_92%)]",
+    className,
+  ]}
+  {...rest}
+>
+  <slot />
+</a>

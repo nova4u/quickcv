@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import Decoration from "../assets/decorations/orange.svg";
+import DmrkLogo from "../assets/dmrk.svg";
+import GithubLogo from "../assets/github.svg";
+import BarIcon from "../assets/icons/bar.svg";
+import FileTextIcon from "../assets/icons/file-text.svg";
+import LockIcon from "../assets/icons/lock.svg";
+import RocketIcon from "../assets/icons/rocket.svg";
+import ShieldIcon from "../assets/icons/shield.svg";
+import Logo from "../assets/logo.webp";
+import Link from "../components/Link.astro";
+
+const features = [
+  {
+    icon: FileTextIcon,
+    title: "PDF Generation",
+    description: "Export a clean, professional CV as a PDF with one click — ready to send anywhere.",
+  },
+  {
+    icon: RocketIcon,
+    title: "One-Click Deployment",
+    description: "Publish your CV as a live website on Vercel, instantly shareable with a personal link.",
+  },
+  {
+    icon: BarIcon,
+    title: "Analytics Integration",
+    description: "Add Vercel, Google, or Umami analytics to track visits to your online CV — fully optional.",
+  },
+  {
+    icon: ShieldIcon,
+    title: "Privacy-First",
+    description: "No accounts, no servers, no data collection. Everything stays in your browser, under your control.",
+  },
+];
+---
+
+<section class="mx-auto md:grid md:grid-cols-2 relative">
+  <Decoration class="absolute top-0 left-0 select-none pointer-events-none" />
+  <!-- Left Content -->
+  <div class="space-y-8 flex-1 max-w-[700px] 3xl:ml-[calc((100vw-1400px)/2)] px-4 mt-10 md:mr-20">
+    <!-- Header with logo/icons -->
+    <div class="flex items-center justify-between relative">
+      <Image src={Logo} alt="QuickCV" class="size-11 ds-logo select-none pointer-events-none" loading="lazy" />
+      <!-- GitHub icon placeholder -->
+      <div class="flex items-center gap-5">
+        <a href="https://dmrk.dev" target="_blank" class="text-black/50 hover:text-black transition-colors">
+          <DmrkLogo />
+        </a>
+        <span class="w-px h-3 bg-black/50"></span>
+        <a href="https://github.com" target="_blank" class="text-black/50 hover:text-black transition-colors">
+          <GithubLogo />
+        </a>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-4.5 mt-10 md:mt-20">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 text-sm font-medium before:w-0.5 before:h-3.5 before:bg-black before:absolute before:left-0 pl-4 relative">
+        <span class="text-gradient"> 100% Free & Open Source & Privacy-First </span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl lg:text-5xl tracking-tight font-medium leading-tighter bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent">Your CV, ready to share in minutes</h1>
+
+      <!-- Description -->
+      <p class="text-base text-black leading-relaxed">QuickCV helps you create a professional CV without the hassle. Fill in your details once, export a polished PDF, and deploy it as a live website — all in a few clicks. No accounts, no data storage, just your CV under your control.</p>
+      <Link href="https://app.getquickcv.com" target="_blank" type="primary" className="w-full md:w-auto relative z-10"> Create CV </Link>
+      <!-- Features List -->
+      <div class="space-y-3">
+        {
+          features.map((feature) => (
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 bg-white rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                <feature.icon />
+              </div>
+              <p class="text-base leading-relaxed text-gray-700">
+                <span class="font-medium text-black">{feature.title}.</span> {feature.description}
+              </p>
+            </div>
+          ))
+        }
+        <span class="pl-10 font-medium text-black">and more...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Preview -->
+  <div class="relative flex-1 md:px-0 px-2">
+    <!-- Browser mockup -->
+    <svg width="746" height="1114" viewBox="0 0 746 1114" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute md:top-0 md:left-[-90px] top-[-100px] left-0 pointer-events-none">
+      <g filter="url(#filter0_f_609_4646)">
+        <rect width="1024" height="565.405" transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 655.77 1024)" fill="url(#paint0_linear_609_4646)" fill-opacity="0.5"></rect>
+      </g>
+      <defs>
+        <filter id="filter0_f_609_4646" x="0.363281" y="-90" width="745.406" height="1204" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="45" result="effect1_foregroundBlur_609_4646"></feGaussianBlur>
+        </filter>
+        <linearGradient id="paint0_linear_609_4646" x1="1024" y1="554.929" x2="17.8501" y2="687.703" gradientUnits="userSpaceOnUse">
+          <stop stop-color="white"></stop>
+          <stop offset="0.183252" stop-color="#ABBAF2"></stop>
+          <stop offset="0.573967" stop-color="#ABECF2"></stop>
+          <stop offset="1" stop-color="white"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.05)] overflow-hidden md:h-screen min-h-[42rem] relative rounded-xl md:rounded-none mt-4 md:mt-0 h-[42rem]">
+      <!-- Floating Browser Headers -->
+      <div class="absolute top-5 z-10 grid grid-cols-3 w-full">
+        <!-- Traffic Light Dots -->
+        <div class="bg-white rounded-2xl ml-4 align-center w-min px-4 h-8 flex items-center gap-1.5 shadow-[0px_2.7px_57px_0px_rgba(0,0,0,0.1),0px_0px_0px_1px_rgba(0,0,0,0.07),0px_8px_16px_-8px_rgba(0,0,0,0.16),0px_16px_32px_-16px_rgba(0,0,0,0.16)]">
+          <div class="w-2 h-2 bg-red-400 rounded-full shadow-[0px_1px_0px_0px_rgba(255,255,255,1),0px_0px_0px_0.36px_rgba(0,0,0,0.1)] border border-black/10"></div>
+          <div class="w-2 h-2 bg-yellow-400 rounded-full shadow-[0px_1px_0px_0px_rgba(255,255,255,1),0px_0px_0px_0.36px_rgba(0,0,0,0.1)] border border-black/10"></div>
+          <div class="w-2 h-2 bg-green-400 rounded-full shadow-[0px_1px_0px_0px_rgba(255,255,255,1),0px_0px_0px_0.36px_rgba(0,0,0,0.1)] border border-black/10"></div>
+        </div>
+
+        <!-- URL Bar -->
+        <div class="bg-white rounded-2xl justify-self-center align-center w-min h-8 px-4 flex items-center gap-2 shadow-[0px_2.7px_57px_0px_rgba(0,0,0,0.1),0px_0px_0px_1px_rgba(0,0,0,0.07),0px_8px_16px_-8px_rgba(0,0,0,0.16),0px_16px_32px_-16px_rgba(0,0,0,0.16)]">
+          <LockIcon />
+          <span class="text-sm font-medium text-gradient to-black bg-clip-text text-transparent">cv.yourname.com</span>
+        </div>
+      </div>
+
+      <!-- Live CV Preview -->
+      <div class="relative overflow-hidden h-full bg-white">
+        <div class="bg-gradient-to-b from-white via-white to-transparent w-full h-20 absolute top-0 left-0"></div>
+        <iframe id="live-cv-preview" src="https://svp-testing.vercel.app/" class="w-full h-full xl:px-6 border-0 pt-12" title="Live CV Example - Denis Marushchak" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
