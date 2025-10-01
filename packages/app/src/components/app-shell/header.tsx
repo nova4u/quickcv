@@ -39,7 +39,7 @@ export default function Header() {
 			<div className="col-start-3 flex justify-self-end  font-medium relative text-sm items-center gap-4 text-gray-700">
 				<Link to="/dashboard">Dashboard</Link>
 				<a
-					href="https://github.com"
+					href="https://github.com/nova4u/quickcv"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-gray-600 hover:text-gray-800 transition-colors"
