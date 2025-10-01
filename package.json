@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "pnpm -r build",
 		"dev:templates": "pnpm --filter templates dev",
-		"dev:app": "pnpm --filter app dev"
+		"dev:app": "pnpm --filter app dev",
+		"dev:web": "pnpm --filter web dev"
 	},
 	"keywords": [],
 	"author": "",
