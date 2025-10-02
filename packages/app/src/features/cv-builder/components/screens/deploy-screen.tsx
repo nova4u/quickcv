@@ -30,6 +30,7 @@ import { AnalyticsSection } from "../analytics/analytics-section";
 import { DeploymentSuccessModal } from "../deployment-success-modal";
 import { ScreenContent } from "../ui/screen-content";
 import { ScreenHeader } from "../ui/screen-header";
+import {trackEvent} from "@quickcv/shared-utils";
 
 // Helper Functions
 function generateDefaultTitle(
@@ -538,6 +539,7 @@ export function DeployScreen() {
 						deploymentStep={currentDeploymentStep}
 						onDeploy={() => handleDeploy()}
 						disabled={isDeploying}
+						{...trackEvent(editMode ? "Update Deployment" : "Create Deployment")}
 					>
 						{editMode ? "Update Deployment" : "Deploy to Vercel"}
 					</DeployButton>

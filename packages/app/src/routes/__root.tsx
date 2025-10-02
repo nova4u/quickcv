@@ -1,7 +1,12 @@
 import { createRootRoute, HeadContent, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { ANALYTICS_SCRIPT } from "@quickcv/shared-utils";
+
 
 export const Route = createRootRoute({
+	head: () => ({
+		scripts: [ANALYTICS_SCRIPT]
+	}),
 	component: () => (
 		<>
 			<HeadContent />

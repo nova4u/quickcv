@@ -267,6 +267,9 @@ importers:
 
   packages/web:
     dependencies:
+      '@quickcv/shared-utils':
+        specifier: workspace:*
+        version: link:../shared-utils
       '@tailwindcss/vite':
         specifier: ^4.0.6
         version: 4.1.10(vite@6.3.6)
@@ -2469,7 +2472,7 @@ packages:
       '@tailwindcss/node': 4.1.10
       '@tailwindcss/oxide': 4.1.10
       tailwindcss: 4.1.10
-      vite: 6.3.6(@types/node@24.0.3)
+      vite: 6.3.6
     dev: false
 
   /@tanstack/history@1.121.21:
@@ -3020,7 +3023,7 @@ packages:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
-      vite: 6.3.6(@types/node@24.0.3)
+      vite: 6.3.6(@types/node@20.19.1)
     dev: true
 
   /@vitest/pretty-format@3.2.4:

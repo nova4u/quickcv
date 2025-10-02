@@ -10,6 +10,7 @@ import RocketIcon from "../assets/icons/rocket.svg";
 import ShieldIcon from "../assets/icons/shield.svg";
 import Logo from "../assets/logo.webp";
 import Link from "../components/Link.astro";
+import { trackEvent } from "@quickcv/shared-utils";
 
 const features = [
   {
@@ -66,7 +67,7 @@ const features = [
 
       <!-- Description -->
       <p class="text-base text-black leading-relaxed">QuickCV helps you create a professional CV without the hassle. Fill in your details once, export a polished PDF, and deploy it as a live website — all in a few clicks. No accounts, no data storage, just your CV under your control.</p>
-      <Link href="https://app.getquickcv.com" target="_blank" type="primary" className="w-full md:w-auto relative z-10"> Create CV </Link>
+      <Link href="https://app.getquickcv.com" target="_blank" type="primary" className="w-full md:w-auto relative z-10" {...trackEvent("Hero - Create CV")}> Create CV </Link>
       <!-- Features List -->
       <div class="space-y-3">
         {
