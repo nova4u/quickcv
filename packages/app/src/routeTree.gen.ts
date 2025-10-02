@@ -9,22 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestRouteImport } from './routes/test'
-import { Route as DeploymentSuccessRouteImport } from './routes/deployment-success'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EditProjectNameRouteImport } from './routes/edit.$projectName'
 
-const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DeploymentSuccessRoute = DeploymentSuccessRouteImport.update({
-  id: '/deployment-success',
-  path: '/deployment-success',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -44,73 +32,35 @@ const EditProjectNameRoute = EditProjectNameRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/deployment-success': typeof DeploymentSuccessRoute
-  '/test': typeof TestRoute
   '/edit/$projectName': typeof EditProjectNameRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/deployment-success': typeof DeploymentSuccessRoute
-  '/test': typeof TestRoute
   '/edit/$projectName': typeof EditProjectNameRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/deployment-success': typeof DeploymentSuccessRoute
-  '/test': typeof TestRoute
   '/edit/$projectName': typeof EditProjectNameRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/dashboard'
-    | '/deployment-success'
-    | '/test'
-    | '/edit/$projectName'
+  fullPaths: '/' | '/dashboard' | '/edit/$projectName'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/dashboard'
-    | '/deployment-success'
-    | '/test'
-    | '/edit/$projectName'
-  id:
-    | '__root__'
-    | '/'
-    | '/dashboard'
-    | '/deployment-success'
-    | '/test'
-    | '/edit/$projectName'
+  to: '/' | '/dashboard' | '/edit/$projectName'
+  id: '__root__' | '/' | '/dashboard' | '/edit/$projectName'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
-  DeploymentSuccessRoute: typeof DeploymentSuccessRoute
-  TestRoute: typeof TestRoute
   EditProjectNameRoute: typeof EditProjectNameRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/deployment-success': {
-      id: '/deployment-success'
-      path: '/deployment-success'
-      fullPath: '/deployment-success'
-      preLoaderRoute: typeof DeploymentSuccessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -138,8 +88,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
-  DeploymentSuccessRoute: DeploymentSuccessRoute,
-  TestRoute: TestRoute,
   EditProjectNameRoute: EditProjectNameRoute,
 }
 export const routeTree = rootRouteImport
