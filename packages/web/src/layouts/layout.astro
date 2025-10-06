@@ -1,7 +1,7 @@
 ---
 import "../global.css";
-import Footer from "../sections/footer.astro";
 import { ANALYTICS_SCRIPT } from "@quickcv/shared-utils";
+import Footer from "../sections/footer.astro";
 
 type Props = {
   title?: string;
@@ -13,14 +13,62 @@ const { title = "QuickCV" } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+    <meta name="description" content="Build a free, ATS-friendly resume in minutes. Instant PDF export, recruiter-tested templates, and optional AI analysis." />
+    <link rel="canonical" href={`https://getquickcv.com${Astro.url.pathname}`} />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Create a standout, ATS-ready resume in minutes. Free PDF export, premium templates, and AI feedback." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://getquickcv.com${Astro.url.pathname}`} />
+    <meta property="og:site_name" content="QuickCV" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://getquickcv.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="QuickCV — Free, ATS-ready resume builder" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@quickcv" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Create a standout, ATS-ready resume in minutes. Free PDF export, premium templates, and AI feedback." />
+    <meta name="twitter:image" content="https://getquickcv.com/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
+    <meta name="msapplication-TileColor" content="#0B0B0F" />
+    <meta name="theme-color" content="#FEFDFC" />
+    <meta name="color-scheme" content="light only" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <script is:inline {...ANALYTICS_SCRIPT}></script>
     <title>{title}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "QuickCV",
+        "url": "https://www.getquickcv.com/",
+        "applicationCategory": "ResumeBuilderApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free & Open Source CV Builder. Create and export professional resumes or publish an online CV—privacy-first, no accounts, instant results.",
+        "image": "https://www.getquickcv.com/og-image.png"
+      }
+    </script>
   </head>
   <body class="antialiased">
     <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden">

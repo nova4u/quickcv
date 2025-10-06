@@ -9,9 +9,11 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.6.0",
+		"@quickcv/shared-utils": "workspace:*",
 		"@tailwindcss/vite": "^4.0.6",
 		"astro": "^5.14.1",
-		"tailwindcss": "^4.0.6",
-		"@quickcv/shared-utils": "workspace:*"
+		"sharp": "^0.34.2",
+		"tailwindcss": "^4.0.6"
 	}
 }
