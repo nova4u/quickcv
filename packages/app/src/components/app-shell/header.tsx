@@ -31,7 +31,7 @@ export default function Header() {
 	return (
 		<div className=" grid grid-cols-3 items-center px-4 w-full max-w-window mx-auto  mt-5">
 			<Link to="/" className="flex items-center  gap-2">
-				<img src={Logo} alt="QuickCV" className="size-8 drop-shadow-logo" />
+				<img src={Logo} alt="QuickCV" className="size-9" />
 				<span className="text-lg font-medium text-black/30 tracking-tight [filter:url(#innerTextShadow)]">
 					QuickCV
 				</span>
